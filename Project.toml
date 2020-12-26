@@ -1,0 +1,7 @@
+name = "Papers"
+uuid = "eb03b534-edd7-451d-b227-7485bd6e9e4b"
+authors = ["yng87 <k.yanagi07@gmail.com>"]
+version = "0.1.0"
+
+[deps]
+LanguageServer = "2b0e0bc5-e4fd-59b4-8912-456d1b03d8d7"
