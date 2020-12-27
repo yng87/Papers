@@ -1,5 +1,5 @@
 module Resource
-using HTTP, JSON3
+using HTTP, JSON3, Sockets
 using ..Model, ..Service
 
 const ROUTER = HTTP.Router()
@@ -29,7 +29,8 @@ function requestHandler(req)
 end
 
 function run()
-    HTTP.serve(requestHandler, "0.0.0.0", 8080)
+    # HTTP.serve(requestHandler, ip"127.0.0.1", 8080) # may fail
+    HTTP.serve(requestHandler, ip"0.0.0.0", 8080)
 end
     
 end
