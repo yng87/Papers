@@ -2,19 +2,19 @@ module Papers
 
 export Model, Mapper, Client, Resource, Service
 
-include("./Client.jl")
-using .Client
+include("Model.jl")
+using .Model
 
 include("Mapper.jl")
 using .Mapper
 
-include("Model.jl")
-using .Model
+include("Service.jl")
+using .Service
+
+include("./Client.jl")
+using .Client
 
 include("Resource.jl")
 using .Resource
-
-include("Service.jl")
-using Service
 
 end
