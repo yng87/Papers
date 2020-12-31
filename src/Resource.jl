@@ -4,6 +4,9 @@ using ..Model, ..Service
 
 const ROUTER = HTTP.Router()
 
+health(req) = Dict("status"=>"ok")
+HTTP.@register(ROUTER, "GET", "/", health)
+
 createPaper(req) = Service.createPaper(JSON3.read(req.body))::Paper
 HTTP.@register(ROUTER, "POST", "/paper", createPaper)
 
@@ -17,7 +20,7 @@ deletePaper(req) = Service.deletePaper(parse(Int, HTTP.URIs.splitpath(req.target
 HTTP.@register(ROUTER, "DELETE", "/paper/*", deletePaper)
 
 pickPaperToRead(req) = Service.pickPaperToRead()::Paper
-HTTP.@register(ROUTER, "GET", "/", pickPaperToRead)
+HTTP.@register(ROUTER, "GET", "/paper", pickPaperToRead)
 
 function requestHandler(req)
     @show req

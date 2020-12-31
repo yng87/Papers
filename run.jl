@@ -1,3 +1,3 @@
-using HTTP, Papers
+using Papers
 
 Resource.run()
