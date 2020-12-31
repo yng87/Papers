@@ -27,7 +27,7 @@ function deletePaper(id)
 end
 
 function pickPaperToRead()
-    resp = HTTP.get(string(SERVER[], "/"), [])
+    resp = HTTP.get(string(SERVER[], "/paper"), [])
     return JSON3.read(resp.body, Paper)
 end
 
